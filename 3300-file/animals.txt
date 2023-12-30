@@ -1,0 +1,4 @@
+Wolf
+Sheep
+Serpent
+Dove

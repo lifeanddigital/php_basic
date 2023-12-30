@@ -1,0 +1,40 @@
+論理演算を使う
+
+条件式でもっと複雑な判定を行いたいことがあります。
+例えば、ユーザーが男性で、かつ、20歳以上である場合とか、今日が木曜日であるかまたは、１週目である場合などです。
+このような場合には、論理演算子を利用して、条件式を複数つなげて記述することができます。
+
+
+
+表2論理演算子
+
+
+<table>
+<thead>
+<tr><th>論理演算子</th><th>名前</th><th>意味</th><th>利用例</th><th>結果</th></tr>
+</thead>
+<tbody>
+<tr><th>$a and $b</th><th>論理積（かつ）</th><th>$aと$bが共にtrueの場合true</th><th>（3　>　1）and（3　<　5）</th><th>true</th></tr>
+<tr><th>$a or $b</th><th>論理和（または）</th><th>$aと$bのどちらかがturueの場合true</th><th>(3　＞　1)or(3　＜　2)</th><th>true</th></tr>
+<tr><th>$a && $b</th><th>論理積（かつ）</th><th>$aと$bが共にtrueの場合true</th><th>(3　＞　1)and(3　＜　5)</th><th>true</th></tr>
+<tr><th>$a || $b</th><th>論理和（または）</th><th>$aと$bのどちらかがturueの場合true</th><th>(3　＞　1)or(3　＜　2)</th><th>true</th></tr>
+<tr><th>！$a</th><th>否定（ではない）</th><th>$aがtrueならfalse、falseならtrue</th><th>!true</th><th>false</th></tr>
+</tbody>
+</table>
+
+
+例えば男性でかつ20歳以上であるかを判定するプログラムは以下のようになります。
+
+<?php
+$gender = "man";
+
+$age = 25;
+
+if($gender == "man" && $age >=20){
+
+echo "男性で20歳以上"；
+
+}else｛
+
+echo"女性、あるいは、20歳未満";
+｝
