@@ -27,27 +27,31 @@ function know_heredocument() {
     ...ここに文字列...
     ...ここに文字列...
     終端ワード;
+    このソースコードではヒアドキュメントの終端ワードに「_HEREDOC_」という記号を使って
+    文章を表示しています。
   </pre>
-  このソースコードではヒアドキュメントの終端ワードに「_HEREDOC_」という記号を使って
-  文章を表示しています。
   _HEREDOC_;
 }
 
 function learn_heredocument() {
   # 説明文の表示
-  echo <<<_BODY_
-  <pre>
+  echo <<<_HERDOC_
   <h2>ヒアドキュメントの変数</h2>
-  ヒアドキュメントは、二重引用符の文字列のと同じ意味を持ちます。
-  そのため、変数の展開なども行われます。
-  ヒアドキュメントは、変数に文字列を代入することもできます。
-
-  <h2>ナウドキュメントの変数</h2>
+  <pre>
   ヒアドキュメントは、二重引用符の文字列のと同じ意味を持ちます。
   そのため、変数の展開なども行われます。
   ヒアドキュメントは、変数に文字列を代入することもできます。
   </pre>
-  _BODY_;
+  _HERDOC_;
+
+  echo <<< '_NOWDOC_'
+  <h2>ナウドキュメントの変数</h2>
+  <pre>
+  文字列の変数展開がない。（単一引用符と同じ動作を表す）
+  変数を表す「$」やエスケープ文字をなどを含む長文を 表示したいときに便利です。
+  Nowdoc構文は、PHP5.3.0以降で利用可能です。
+  </pre>
+  _NOWDOC_;
 
   # 変数に文字列と数値を代入
   $name = "lifeplan";
@@ -66,14 +70,18 @@ function learn_heredocument() {
   echo $body;
 }
 
-function practice_heredocument() {
-echo <<< _FORM_
+function heredocument_form() {
+  echo "<h2>FROMの表示</h2>" ;
+  echo <<< _FORM_
   <form action="$_SERVER[SCRIPT_NAME]" method="GET">
     <input type="text" name="username" />
     <input type="submit" value="送信" />
   </form>
 _FORM_;
+}
 
+function heredocument_table() {
+echo "<h2>TEABLEの表示</h2>" ;
 echo <<< _TABLE_
 <table  border="1">
 <thead>
@@ -97,6 +105,7 @@ if (realpath($_SERVER["SCRIPT_FILENAME"]) == realpath(__FILE__)) {
   echo '<link rel="stylesheet" type="text/css" href="../../css/style.css" />' ;
   know_heredocument();
   learn_heredocument() ;
-  practice_heredocument() ;
+  heredocument_table() ;
+  heredocument_form() ;
 }
 ?>

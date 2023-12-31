@@ -1,4 +1,4 @@
 <?php
 $var = "TEST";
-echo '<p>test $var</p>'; // “WŠJ‚³‚ê‚È‚¢
-echo "<p>test $var</p>"; // “WŠJ‚³‚ê‚é
+echo '<p>test $var</p>'; // å±•é–‹ã•ã‚Œãªã„
+echo "<p>test $var</p>"; // å±•é–‹ã•ã‚Œã‚‹

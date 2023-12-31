@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1679586369602702"
      crossorigin="anonymous"></script>
 <!-- バナー -->
@@ -13,6 +12,7 @@
 <?php
 // http://localhost/mysite/PHP_basic/1160-echo/ph1160_output.php
 // https://lifeanddigital.net/mysite/php_basic/1160-echo/ph1160_output.php  
+// https://lifeanddigital.net/php-source/ph1160_output-php/
 
 function know_output() { 
     echo "<h2>文字出力</h2>" ;
@@ -102,10 +102,10 @@ function practice_output() {
 }
 
 function work_output() {
-    echo "echo 文を使って文字列「果物」「リンゴ」「スイカ」を表示させる"
-    echo "echo 文を使って数字 「1234」 「123.45」を表示させる"
-    echo "print 文を使って文字列「果物」「リンゴ」「スイカ」を表示させる"
-    echo "print 文を使って数字 「1234」 「123.45」を表示させる"
+    echo "echo 文を使って文字列「果物」「リンゴ」「スイカ」を表示させる" ;
+    echo "echo 文を使って数字 「1234」 「123.45」を表示させる" ;
+    echo "print 文を使って文字列「果物」「リンゴ」「スイカ」を表示させる" ;
+    echo "print 文を使って数字 「1234」 「123.45」を表示させる" ;
 }
 
 if (realpath($_SERVER["SCRIPT_FILENAME"]) == realpath(__FILE__)) {
@@ -114,4 +114,14 @@ if (realpath($_SERVER["SCRIPT_FILENAME"]) == realpath(__FILE__)) {
     practice_output() ;
     work_output() ;
 }
+?>
+
+<?php
+echo "<h2>演算結果の出力</h2>" ;
+echo "(2 + 3)の足し算を出力<br>"  ;
+echo "足し算:" , ( 2 + 3 ) , "<br>" ;
+
+print "(3 * 2 )の掛け算を出力<br>" ;
+print "掛け算;" . ( 3 * 2 ) . "<br>" ;
+
 ?>

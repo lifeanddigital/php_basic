@@ -1,3 +1,5 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1679586369602702"
      crossorigin="anonymous"></script>
 <!-- バナー -->
@@ -20,7 +22,7 @@ function know_value () {
     変数は、プログラムが動作する間、一時的にコンピューターのメモリ上に値を保持する事ができます。
     変数は、演算が可能です。
     変数に値を入れる時は = （代入演算子）を使用します。
-    変数の値は、 echo文 を使用して出力するができます。
+    変数の値は、 echo文 やprint関数を使用して出力する事ができます。
 
     <h2>変数名のルールについて</h2>
     変数名の先頭には、$（ドルマーク）を付ける
@@ -33,11 +35,8 @@ function know_value () {
         $year200
 
     <h2>変数の評価について</h2>
-     "" 内に記述すると値が表示される（内容が評価される）
-     ' ' 内に記述すると変数名が表示される
-
-     変数に値を入れる時は = （代入演算子）を使用する。
-    変数の値は、そのまま  echoを使用して  出力することもできます。
+     出力文の " " 内に記述すると値が表示されます（内容が評価される）
+     出力文の ' ' 内に記述すると変数名が表示されます
 
     構文：  $変数名 = 値;
     </pre>
@@ -53,24 +52,27 @@ function learn_value () {
     $age = 18;
 
     echo '<p> 変数 の内容を表示する </p>' ;
-    echo '$nameの値 : ' , $name ; 
-    echo '<br>' ; // 改行
-    echo '$ageの値 : ' , $age ;
+    echo '$nameの値 : ' , $name , "<br>" ; 
+    echo '$ageの値 : ' , $age , "<br>";
 
-    echo '<br>' ;
-    echo '評価しながら出力する' ;
-    echo "<br>" ;
-    echo "名前は $name です。年齢は $age 歳です";
+    echo '評価しながら出力する' , "<br>";
+    echo "名前は $name です。年齢は $age 歳です", "<br>";
 
-    echo '<br>' ;
-    echo '評価しながら出力する' ;
-    echo "<br>" ;
-    echo '名前は $name です。年齢は $age 歳です';
+    echo '評価しながら出力する' , "<br>";
+    echo '名前は $name です。年齢は $age 歳です', "<br>";
 }
-
+function practice_value(){
+    echo '<h3> <p> 変数 の内容を表示する </p>' ;
+    // 変数　&name に　山田を格納する
+    // 変数　&age  に　18を格納する
+    $name = "山田";
+    $age = 18 ;
+    echo "名前は $name です。年齢は $age 歳です", "<br>";
+    echo '名前は $name です。年齢は $age 歳です', "<br>";
+}
 if (realpath($_SERVER["SCRIPT_FILENAME"]) == realpath(__FILE__)) {
     know_value () ;
     learn_value () ;
-    # practice_value() ;
+    practice_value() ;
 }
 ?>

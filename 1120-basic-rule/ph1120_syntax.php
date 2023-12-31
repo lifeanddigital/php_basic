@@ -1,6 +1,7 @@
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1679586369602702"
-     crossorigin="anonymous"></script>
 <!-- バナー -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1679586369602702"
+     crossorigin="anonymous">
+</script>
 <ins class="adsbygoogle"
      style="display:inline-block;width:728px;height:90px"
      data-ad-client="ca-pub-1679586369602702"
@@ -49,11 +50,11 @@
     }
     
     if (realpath($_SERVER["SCRIPT_FILENAME"]) == realpath(__FILE__)) {
-        header("Cache-Control: no-cache, must-revalidate"); 
-        header('Content-Type: text/html; charset=UTF-8');
-        header('Content-Language: ja');
         echo '<link rel="stylesheet" type="text/css" href="../../css/style.css" />' ;
         know_syntax() ;
         learn_syntax() ;
     }
+?>
+<?php
+    print ( "Hello PHP ") ;
 ?>
